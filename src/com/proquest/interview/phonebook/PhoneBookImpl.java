@@ -59,13 +59,13 @@ public class PhoneBookImpl implements PhoneBook {
         Person p1 = new Person();
         Person p2 = new Person();;
 
-        p1.name = "John Smith";
-        p1.phoneNumber = "(248) 123-4567";
-        p1.address = "1234 Sand Hill Dr, Royal Oak, MI";
+        p1.setName("John Smith");
+        p1.setPhoneNumber("(248) 123-4567");
+        p1.setAddress("1234 Sand Hill Dr, Royal Oak, MI");
 
-        p2.name = "Cynthia Smith";
-        p2.phoneNumber = "(824) 128-8758";
-        p2.address = "875 Main St, Ann Arbor, MI";
+        p2.setName( "Cynthia Smith" );
+        p2.setPhoneNumber("(824) 128-8758");
+        p2.setAddress("875 Main St, Ann Arbor, MI");
 
         pbi.addPerson(p1);
         pbi.addPerson(p2);
@@ -77,9 +77,8 @@ public class PhoneBookImpl implements PhoneBook {
             for (int i = 0; i < people.size(); i++) {
 
                 Person temp = (Person) people.get(i);
-                System.out.println("Name:" + temp.name);
-                System.out.println("Phone Number:" + temp.phoneNumber);
-                System.out.println("Address:" + temp.address);
+                System.out.println( temp );
+                
             }
         } catch (SQLException ex) {
             System.out.println("ERROR:" + ex.getMessage());
@@ -91,9 +90,8 @@ public class PhoneBookImpl implements PhoneBook {
 
         Person p = pbi.findPerson("Cynthia", "Smith");
 
-        System.out.println("Name:" + p.name);
-        System.out.println("Phone Number:" + p.phoneNumber);
-        System.out.println("Address:" + p.address);
+        System.out.println( p );
+        
 
     }
 }
